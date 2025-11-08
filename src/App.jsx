@@ -15,15 +15,15 @@ function App() {
   return (
     <ConnectionProvider endpoint={"https://api.devnet.solana.com/"}>
       <WalletProvider wallets={[]} autoConnect>
-        <WalletModalProvider>
-          <WalletMultiButton />
-          {/* <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/create-token" element={<TokenCreation />} />
-            <Route path="/supply-token" element={<SupplyToken />} />
-          </Routes> */}
-          <TokenLaunchPad />
-        </WalletModalProvider>
+        <div>
+          <WalletModalProvider>
+            <Home />
+            <Routes>
+              <Route path="/create-token" element={<TokenCreation />} />
+              <Route path="/supply-token" element={<SupplyToken />} />
+            </Routes>
+          </WalletModalProvider>
+        </div>
       </WalletProvider>
     </ConnectionProvider>
   );
